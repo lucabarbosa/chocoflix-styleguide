@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/lucabarbosa/chocoflix-styleguide",
   "author": "Lucas Barbosa <barbosa.lucash@gmail.com> (https://github.com/lucabarbosa)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.40.2"
+  }
 }
