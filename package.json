@@ -1,0 +1,9 @@
+{
+  "name": "chocoflix-styleguide",
+  "version": "0.0.1",
+  "description": "Styleguide for Chocoflix",
+  "main": "index.js",
+  "repository": "https://github.com/lucabarbosa/chocoflix-styleguide",
+  "author": "Lucas Barbosa <barbosa.lucash@gmail.com> (https://github.com/lucabarbosa)",
+  "license": "MIT"
+}
