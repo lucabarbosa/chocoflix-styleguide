@@ -8,12 +8,14 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "storybook": "start-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^5.1.11",
     "babel-loader": "^8.0.6",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -23,5 +25,8 @@
     "eslint-plugin-react-hooks": "^2.0.1",
     "webpack": "^4.40.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
 }
