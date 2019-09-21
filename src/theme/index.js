@@ -3,6 +3,7 @@ export default {
   surface: '#F9F9F9',
   onBackground: '#303030',
   onSurface: '#303030',
+  highlight: '#0071EB',
   primary: {
     light: '#F97E6D',
     main: '#F00',
@@ -39,4 +40,8 @@ export default {
     dark: '#151515',
     text: '#FFF',
   },
+  borderColor: {
+    default: '#9597a6',
+    focus: '#0071EB'
+  }
 }
