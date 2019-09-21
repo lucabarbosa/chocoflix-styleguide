@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import capitalize from '../../utils/capitalize';
 
 export const Button = styled.button`
   background: none;
@@ -22,7 +21,7 @@ export const Button = styled.button`
 `;
 
 const handleColor = ({ color, outline, theme }) => {
-  const buttonColor = theme[color][0];
+  const buttonColor = theme[color].main;
 
   if (outline) {
     return `
@@ -31,8 +30,7 @@ const handleColor = ({ color, outline, theme }) => {
     `;
   }
 
-  const textColorName = `on${capitalize(color)}`;
-  const textColor = theme[textColorName];
+  const textColor = theme[color].text;
 
   return `
     background: ${buttonColor};
@@ -43,9 +41,8 @@ const handleColor = ({ color, outline, theme }) => {
 
 const handleHoverColor = ({ color, outline, theme }) => {
   if (outline) {
-    const buttonColor = theme[color][0];
-    const textColorName = `on${capitalize(color)}`;
-    const textColor = theme[textColorName];
+    const buttonColor = theme[color].main;
+    const textColor = theme[color].text;
 
     return `
       background: ${buttonColor};
@@ -53,7 +50,8 @@ const handleHoverColor = ({ color, outline, theme }) => {
     `;
   }
 
-  const buttonColor = theme[color][1];
+  const buttonColor = theme[color].dark;
+
   return `
     background: ${buttonColor};
     border-color: ${buttonColor};
@@ -61,7 +59,7 @@ const handleHoverColor = ({ color, outline, theme }) => {
 }
 
 const handleDisabledColor = ({ color, outline, theme }) => {
-  const buttonColor = theme[color][2];
+  const buttonColor = theme[color].light;
 
   if (outline) {
     return `
@@ -71,8 +69,7 @@ const handleDisabledColor = ({ color, outline, theme }) => {
     `;
   }
 
-  const textColorName = `on${capitalize(color)}`;
-  const textColor = theme[textColorName];
+  const textColor = theme[color].text;
 
   return `
     background: ${buttonColor};
