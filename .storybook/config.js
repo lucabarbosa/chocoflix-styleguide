@@ -1,19 +1,22 @@
 
 import { setOptions } from "@storybook/addon-options";
-import { configure, addDecorator } from "@storybook/react";
+import { addDecorator, addParameters, configure } from "@storybook/react";
+import { getPropDefs } from '@storybook/addon-docs/react';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 import themeDecorator from './theme-decorator';
 
-setOptions({
-  addonPanelInRight: true,
-  name: "Chocoflix UI Kit",
+setOptions({ name: "Chocoflix UI Kit" });
+
+addParameters({
+  options: {
+    docs: {
+      inlineStories: true,
+      getPropDefs,
+    },
+  },
+  docs: DocsPage,
 });
-
-const req = require.context("../src", true, /.stories.js$/);
-
-function loadStories() {
-  req.keys().forEach((filename) => req(filename));
-}
 
 addDecorator(themeDecorator);
 
-configure(loadStories, module);
+configure(require.context('../src', true, /\.stories\.js$/), module);

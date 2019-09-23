@@ -1,19 +1,11 @@
 import React from 'react';
 import Label from './Label';
-import { storiesOf } from '@storybook/react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
-import { wInfo } from '../../utils/wInfo';
 
-const stories = storiesOf('Components/Label', module);
-stories.addDecorator(withKnobs);
+export default {
+  title: 'Design System|Label',
+  component: Label
+};
 
-stories.add(
-  'Text',
-  wInfo()(() => (
-    <Label
-      optional={boolean('Optional', false)}
-      customMessage={text('Custom Message', '')}>
-      {text('Label', 'Label')}
-    </Label>
-  ))
-);
+export const withText = () => <Label>What's your name?</Label>;
+export const withOptional = () => <Label optional>Tip your address</Label>;
+export const withCustomMessage = () => <Label customMessage="blue or green">What's your favorite color?</Label>;

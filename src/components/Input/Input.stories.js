@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
-import { storiesOf } from '@storybook/react';
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
-import { wInfo } from '../../utils/wInfo';
 
-const stories = storiesOf('Components/Input', module);
-stories.addDecorator(withKnobs);
+export default {
+  title: 'Design System|Input',
+  component: Input
+}
 
-stories.add(
-  'Text',
-  wInfo()(() => (
+export const Enabled = () => {
+  const [value, setValue] = useState('');
+  const handleValue = e => setValue(e.target.value);
+
+  return (
     <Input
-      type="text"
-      placeholder="teste"
+      placeholder="e.g. Palmeiras is the best Brazilian's team."
+      onChange={handleValue}
+      value={value}
     />
-  ))
-);
+  );
+};
+
+export const Disabled = () => <Input placeholder="e.g. Palmeiras is the best Brazilian's team." disabled />;
